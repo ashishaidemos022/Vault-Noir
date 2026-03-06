@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-bone-50 text-noir-900 font-body antialiased;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: #111111;
+  color: #f8f6f2;
+}
+
+.noir-grid {
+  background-image: linear-gradient(90deg, rgba(17, 17, 17, 0.07) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(17, 17, 17, 0.07) 1px, transparent 1px);
+  background-size: 120px 120px;
+}
+
+.luxe-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(17,17,17,0.5), transparent);
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

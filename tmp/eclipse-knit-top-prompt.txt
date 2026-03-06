@@ -1,0 +1,13 @@
+Use case: product-mockup
+Asset type: ecommerce product detail image
+Primary request: Eclipse Knit Top only, fine-gauge merino knit top with a softly framed neckline
+Scene/background: neutral studio backdrop in warm gray
+Subject: a single women's fine-gauge knit top on a torso mannequin, no person
+Style/medium: premium photorealistic fashion product photography
+Composition/framing: centered, front-facing, waist-up crop, product fills 70% of frame
+Lighting/mood: soft diffused studio light, subtle shadow below hem
+Color palette: ink charcoal knit, neutral gray background
+Materials/textures: visible fine-gauge knit texture and clean neckline edge
+Quality: high
+Constraints: no model, no face, no logos, no text, no watermark, top only (no coat, no trousers, no accessories)
+Avoid: runway scene, editorial full-body shot, motion blur, cluttered background
