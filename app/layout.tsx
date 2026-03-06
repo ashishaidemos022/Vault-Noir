@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { TalkdeskWidgetLoader } from "@/components/TalkdeskWidgetLoader";
 
 export const metadata: Metadata = {
   title: "VAULT NOIR",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
+        <TalkdeskWidgetLoader />
       </body>
     </html>
   );
