@@ -2,14 +2,18 @@ import { notFound } from "next/navigation";
 import { AvailabilityPill } from "@/components/AvailabilityPill";
 import { getAllFootwear, getFootwearBySlug } from "@/lib/footwear";
 
-export default function FootwearDetailPage({ params }: { params: { slug: string } }) {
-  const product = getFootwearBySlug(params.slug);
+export default async function FootwearDetailPage({ params }: { params: { slug: string } }) {
+  const product = await getFootwearBySlug(params.slug);
   if (!product) return notFound();
 
   return (
     <main className="mx-auto max-w-5xl space-y-10 px-6 py-16">
       <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr]">
-        <img src={product.images[0]} alt={product.title} className="h-[520px] w-full rounded-3xl object-cover shadow-soft-edge" />
+        <img
+          src={product.images?.[0] || "/assets/footwear-hero.jpg"}
+          alt={product.title}
+          className="h-[520px] w-full rounded-3xl object-cover shadow-soft-edge"
+        />
         <div className="space-y-5">
           <p className="text-xs uppercase tracking-[0.28em] text-noir-500">Footwear</p>
           <h1 className="font-display text-4xl text-noir-900">{product.title}</h1>
@@ -32,5 +36,6 @@ export default function FootwearDetailPage({ params }: { params: { slug: string 
 }
 
 export const generateStaticParams = async () => {
-  return getAllFootwear().map((product) => ({ slug: product.slug }));
+  const products = await getAllFootwear();
+  return products.map((product) => ({ slug: product.slug }));
 };

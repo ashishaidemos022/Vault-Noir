@@ -21,7 +21,7 @@ export async function GET(
     return NextResponse.json(data ?? null);
   }
 
-  const product = getFootwearBySlug(params.slug);
+  const product = await getFootwearBySlug(params.slug);
   if (!product) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }

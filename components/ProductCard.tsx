@@ -9,6 +9,8 @@ export const ProductCard = ({
   product: Product;
   hrefBase?: string;
 }) => {
+  const imageSrc = product.images?.[0] || "/assets/footwear-hero.jpg";
+
   return (
     <Link
       href={`${hrefBase}/${product.slug}`}
@@ -16,7 +18,7 @@ export const ProductCard = ({
     >
       <div className="relative overflow-hidden rounded-2xl bg-bone-100">
         <img
-          src={product.images[0]}
+          src={imageSrc}
           alt={product.title}
           className="h-[320px] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
         />

@@ -5,9 +5,9 @@ import { getFeaturedProducts } from "@/lib/products";
 import { getFeaturedFootwear } from "@/lib/footwear";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
   const featured = getFeaturedProducts();
-  const featuredFootwear = getFeaturedFootwear().slice(0, 3);
+  const featuredFootwear = (await getFeaturedFootwear()).slice(0, 3);
   return (
     <main className="noir-grid">
       <Hero />

@@ -2,8 +2,8 @@ import Link from "next/link";
 import { getAllFootwear } from "@/lib/footwear";
 import { AvailabilityPill } from "@/components/AvailabilityPill";
 
-export default function FootwearPage() {
-  const footwear = getAllFootwear();
+export default async function FootwearPage() {
+  const footwear = await getAllFootwear();
 
   return (
     <main className="mx-auto max-w-6xl space-y-10 px-6 py-16">
@@ -31,7 +31,11 @@ export default function FootwearPage() {
         {footwear.map((item) => (
           <Link key={item.slug} href={`/footwear/${item.slug}`} className="space-y-3">
             <div className="relative overflow-hidden rounded-2xl bg-bone-100">
-              <img src={item.images[0]} alt={item.title} className="h-[300px] w-full object-cover" />
+              <img
+                src={item.images?.[0] || "/assets/footwear-hero.jpg"}
+                alt={item.title}
+                className="h-[300px] w-full object-cover"
+              />
               <div className="absolute left-4 top-4">
                 <AvailabilityPill availability={item.availability} />
               </div>

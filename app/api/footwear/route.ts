@@ -24,7 +24,8 @@ export async function GET(request: Request) {
     return NextResponse.json(data ?? []);
   }
 
-  const rows = getAllFootwear().filter((item) => {
+  const footwear = await getAllFootwear();
+  const rows = footwear.filter((item) => {
     if (gender && item.gender !== gender) return false;
     if (width) {
       if (!item.footwear_width_fit) return false;
